@@ -1,0 +1,57 @@
+<filter-textbox (changed) = "filter($event)"></filter-textbox>
+<br />
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th (click)="sort('name')">Name</th>
+            <th (click)="sort('city')">City</th>
+            <th (click)="sort('orderTotal')">Order Total</th>
+            <!-- <th >Name</th>
+            <th>City</th>
+            <th>Order Total</th> -->
+        </tr>
+    </thead>
+    <tr *ngFor = "let cust of filteredCustomers">
+        <td>
+            <a>
+                {{ cust.name | capitalized }}
+            </a>
+        </td>
+        <td>{{ cust.city | titlecase }}</td>
+        <td>{{ cust.orderTotal | currency: currencyCode:'symbol'}}</td>
+    </tr>
+    <tr *ngIf="filteredCustomers && filteredCustomers.length">
+        <td colspan="2">&nbsp;</td>
+        <td>
+            {{ customersOrderTotal | currency: currencyCode:'symbol'}}
+        </td>
+    </tr>
+    <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
+        <td colspan="4">No customers found</td>
+    </tr>
+</table>
+Number of Customers: {{ filteredCustomers.length }}
+<br />
+
+<!-- html code over here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=;, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<html>
+    <head>
+        <table>
+            <tr>
+                <th>employee list</th>
+            </tr>
+        </table>
+    </head>
+</html>
