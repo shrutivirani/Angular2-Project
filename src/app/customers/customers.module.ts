@@ -6,7 +6,7 @@ import { CustomersComponent } from './customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { FilterTextboxComponent } from './customers-list/filter-textbox.component';
 import { SharedModule } from '../shared/shared.module';
-// import { CustomersRoutingModule } from './customers-routing.module';
+import { CustomersRoutingModule } from './customers-routing.module';
 
 
 
@@ -17,10 +17,10 @@ import { SharedModule } from '../shared/shared.module';
 
     ],
     imports: [
-        CommonModule,
-        SharedModule,
-        FormsModule,
-        // CustomersRoutingModule
+        CommonModule, // for ngIf, ngFor, ngClass and so on
+        SharedModule, // for pipe
+        FormsModule, // for [(ngModel)]
+        CustomersRoutingModule
     ],
     exports: [CustomersComponent]
 })

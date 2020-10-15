@@ -6,24 +6,24 @@ import { CustomersModule } from './customers/customers.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
-import { OrdersComponent } from './orders/orders.component';
+import { OrdersModule } from './orders/orders.module';
 // import { CustomersRoutingModule } from './customers/customers-routing.module';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        OrdersComponent
-    ],
     imports: [
         BrowserModule,
-        CoreModule,
+        CoreModule, // for data.service and core.service
         CustomersModule,
+        OrdersModule,
         SharedModule,
         AppRoutingModule,
 
     ],
+    declarations: [
+        AppComponent,
+    ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent] //it means from where to start?
 })
 export class AppModule { }

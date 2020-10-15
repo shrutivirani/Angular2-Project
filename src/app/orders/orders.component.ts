@@ -11,19 +11,19 @@ import { ICustomers, IOrder, IOrderItem } from '../shared/interfaces';
 })
 export class OrdersComponent implements OnInit {
 
-  orders: IOrder[] = [];
   customer: ICustomers;
-  order: IOrder[] = [];
+  orders: IOrder[] = [];
+  currencyCode: string = 'INR';
 
   constructor(private dataService: DataService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
 
-    let id = +this.route.snapshot.paramMap.get('id');
+    let id = +this.route.snapshot.paramMap.get('id'); // + indicates ParseInt()
 
-    this.dataService.getOrder(id).subscribe((order: IOrder[]) => {
-        this.order = order;
+    this.dataService.getOrder(id).subscribe((orders: IOrder[]) => {
+        this.orders = orders;
     });
 
 

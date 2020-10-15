@@ -12,5 +12,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       throw new Error("Method not implemented.");
   }
-  title = 'first-web';
+  title = 'First Angular App';
 }
